@@ -18,25 +18,43 @@
         <h1 class="title">Paradisiac</h1>
         <p class="tag">Helping you find Paradise</p>
       </div>
+
       <nav class="main-nav">
         <a href="#">Home</a>
         <a href="#">Attractions</a>
         <a href="#">Guides</a>
         <a href="#">About</a>
+
+        <!-- Dropdown wrapper -->
+        <div class="theme-dropdown">
+          <button id="themeToggle" class="theme-btn">
+            Themes ▼
+          </button>
+
+          <div class="theme-menu" id="themeMenu">
+            <button data-theme="theme-teal">Teal</button>
+            <button data-theme="theme-coral">Coral</button>
+            <button data-theme="theme-sand">Sand</button>
+            <button data-theme="theme-ocean">Ocean Blue</button>
+            <button data-theme="theme-sunset">Sunset Orange</button>
+            <button data-theme="theme-night">Night Mode</button>
+          </div>
+        </div>
       </nav>
+      
     </div>
   </header>
+
 
   <section class="hero">
     <div class="hero-inner container">
       <div class="hero-text">
-        <h2>Dolphin Cove Jamaica — Experience, Ethics, and Everything In Between</h2>
+        <h2>Dolphin Cove, Jamaica: <br> A Dive into Marine Life Treatment</h2>
         <p class="lead">Up-close encounters and turquoise lagoons — and an ethical question every thoughtful traveler should consider.</p>
         <a class="btn" href="#read">Read the guide</a>
       </div>
       <div class="hero-image" aria-hidden="true">
-        <!-- Replace with an image in /images/banner.jpg -->
-        <img src="img/dolphin.jpg" alt="Photo by Ranae Smith on "<a href="https://unsplash.com/photos/a-dolphin-is-jumping-out-of-the-water-kNxDFvz7Snw?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+        <img src="img/dolphin.jpg" alt="Photo by Ranae Smith on Unsplash">
       </div>
     </div>
   </section>
@@ -63,7 +81,7 @@
                 Dolphin Cove markets itself as a place where conservation, education, and entertainment intersect. Across its Jamaican locations—including Ocho Rios, Montego Bay, and Lucea—the company promotes “natural” sea-water lagoons rather than concrete tanks, emphasizing that its animals live in environments connected to the Caribbean Sea. Trained staff oversee encounters such as swimming, dorsal pulls, “kiss” photos, and shallow-water interactions. These structured sessions are designed to feel both safe and personal, giving guests that sense of intimacy and novelty.
                 </p>
                 <p>
-                Dolphin Cove’s public communications emphasize several core benefits:
+                Dolphin Cove’sl public communications emphasize several core benefits:
                 </p>
                 <ul>
                 <li><strong>Education through interaction</strong> — Staff deliver short briefings about dolphin behavior, biology, and conservation messaging before sessions.</li>
@@ -215,5 +233,8 @@
       <p>© 2025 Island Trails • Designed for educational use. This page compiles public reporting and company documents for student research.</p>
     </div>
   </footer>
+
+  <script src="theme.js"></script>
+
 </body>
 </html>

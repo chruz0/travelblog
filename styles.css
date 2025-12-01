@@ -1,25 +1,249 @@
+/* ===========================
+   Island Trails — styles.css
+   Theme-driven variables + polished UI tokens
+   Replace your existing styles.css with this file
+   =========================== */
+
 :root{
-  --bg:#f7faf9;
-  --card:#ffffff;
-  --accent:#138a86; /* teal */
-  --accent-2:#ff7b6b; /* coral */
-  --muted:#6b7280;
+  /* Core layout tokens */
   --max-width:1100px;
   --radius:14px;
-  --shadow: 0 6px 18px rgba(17,24,39,0.06);
-  font-family: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  color: #0f172a;
+  --font-sans: "Montserrat", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-serif: "Lora", serif;
+  --brand-font: "Bonheur Royale", cursive;
+  --shadow-elev: 0 6px 18px rgba(17,24,39,0.06);
+
+  /* -------------------------
+     Theme tokens (defaults)
+     Each theme overrides these on the body element
+     ------------------------- */
+  --background: #f7faf9;
+  --background-2: #ffffff;    /* for subtle gradients / panels */
+  --page-gradient-end: #ffffff;
+
+  --text: #072a2a;
+  --muted: #6b7280;
+  --heading: #072a2a;
+
+  --accent: #0f9f9f;         /* primary action */
+  --accent-dark: #0b7f7f;    /* hover / active */
+  --accent-2: #ff7b6b;       /* secondary accent (used sparingly) */
+
+  --card: #ffffff;
+  --card-border: rgba(7,42,42,0.06);
+
+  --btn-bg: var(--accent);
+  --btn-hover: var(--accent-dark);
+  --btn-foreground: #ffffff;
+
+  --link: var(--accent);
+  --link-hover: var(--accent-dark);
+
+  --shadow-color: rgba(17,24,39,0.06);
+
+  --nav-color: rgba(0,0,0,0.65);
+
+  /* small UI tokens */
+  --ui-border-radius: 10px;
+  --input-bg: rgba(255,255,255,0.92);
 }
+
+/* ===========================
+   Theme-specific palettes
+   Add or adjust palettes here
+   =========================== */
+
+/* Theme: Teal */
+.theme-teal {
+  --background: #f6fffd;
+  --background-2: #ffffff;
+  --page-gradient-end: #ffffff;
+
+  --text: #083434;
+  --muted: #4b6b6a;
+  --heading: #083434;
+
+  --accent: #0f9f9f;
+  --accent-dark: #0b7f7f;
+  --accent-2: #1bb7b3;
+
+  --card: #ffffff;
+  --card-border: rgba(11,79,87,0.08);
+
+  --btn-bg: var(--accent);
+  --btn-hover: #0c8f8f;
+  --btn-foreground: #fff;
+
+  --link: var(--accent);
+  --link-hover: #0c8f8f;
+
+  --shadow-color: rgba(6,35,35,0.06);
+  --nav-color: rgba(6,64,71,0.85);
+}
+
+/* Theme: Coral */
+.theme-coral {
+  --background: #fff7f4;
+  --background-2: #ffffff;
+  --page-gradient-end: #fffefc;
+
+  --text: #4a1e1e;
+  --muted: #7a5a58;
+  --heading: #4a1e1e;
+
+  --accent: #ff6f61;
+  --accent-dark: #e0574a;
+  --accent-2: #ff9a88;
+
+  --card: #fffaf9;
+  --card-border: rgba(209,77,77,0.06);
+
+  --btn-bg: var(--accent);
+  --btn-hover: var(--accent-dark);
+  --btn-foreground: #fff;
+
+  --link: var(--accent);
+  --link-hover: var(--accent-dark);
+
+  --shadow-color: rgba(122,66,66,0.06);
+  --nav-color: rgba(217,77,77,0.9);
+}
+
+/* Theme: Sand */
+.theme-sand {
+  --background: #fdf7ef;
+  --background-2: #ffffff;
+  --page-gradient-end: #fffdf9;
+
+  --text: #4a3b1f;
+  --muted: #82725a;
+  --heading: #4a3b1f;
+
+  --accent: #d5a253;
+  --accent-dark: #b9883f;
+  --accent-2: #e6b86e;
+
+  --card: #fffdf6;
+  --card-border: rgba(176,136,82,0.06);
+
+  --btn-bg: var(--accent);
+  --btn-hover: var(--accent-dark);
+  --btn-foreground: #222;
+
+  --link: var(--accent);
+  --link-hover: var(--accent-dark);
+
+  --shadow-color: rgba(79,61,32,0.06);
+  --nav-color: rgba(160,120,70,0.9);
+}
+
+/* ============================
+   Theme — Ocean Blue
+   ============================ */
+.theme-ocean {
+  --background: #0b1f3a;
+  --background-2: #102a47;
+  --page-gradient-end: #0b1f3a;
+
+  --text: #e8f4ff;
+  --muted: #bcd5ea;
+  --heading: #e8f4ff;
+
+  --accent: #1da3ff;
+  --accent-dark: #1480cc;
+  --accent-2: #69c1ff;
+
+  --card: #102a47;
+  --card-border: rgba(255,255,255,0.06);
+
+  --btn-bg: var(--accent);
+  --btn-hover: var(--accent-dark);
+  --btn-foreground: #001a33;
+
+  --link: var(--accent);
+  --link-hover: var(--accent-dark);
+
+  --shadow-color: rgba(0,0,0,0.6);
+  --nav-color: rgba(255,255,255,0.85);
+}
+
+/* ============================
+   Theme — Sunset Orange
+   ============================ */
+.theme-sunset {
+  --background: #2a1205;
+  --background-2: #3a1b0a;
+  --page-gradient-end: #2a1205;
+
+  --text: #ffe7d6;
+  --muted: #d49a7a;
+  --heading: #ffe7d6;
+
+  --accent: #ff6a2a;
+  --accent-dark: #d55421;
+  --accent-2: #ff8b57;
+
+  --card: #3a1b0a;
+  --card-border: rgba(255,255,255,0.08);
+
+  --btn-bg: var(--accent);
+  --btn-hover: var(--accent-dark);
+  --btn-foreground: #fff;
+
+  --link: var(--accent);
+  --link-hover: var(--accent-dark);
+
+  --shadow-color: rgba(0,0,0,0.55);
+  --nav-color: rgba(255,200,180,0.85);
+}
+
+/* ============================
+   Theme — Night Mode
+   ============================ */
+.theme-night {
+  --background: #0b0b0d;
+  --background-2: #141418;
+  --page-gradient-end: #0b0b0d;
+
+  --text: #e5e5e5;
+  --muted: #8a8a8a;
+  --heading: #ffffff;
+
+  --accent: #4da6ff;
+  --accent-dark: #1c7ad8;
+  --accent-2: #7fc3ff;
+
+  --card: #141418;
+  --card-border: rgba(255,255,255,0.06);
+
+  --btn-bg: var(--accent);
+  --btn-hover: var(--accent-dark);
+  --btn-foreground: #000;
+
+  --link: var(--accent);
+  --link-hover: var(--accent-dark);
+
+  --shadow-color: rgba(0,0,0,0.7);
+  --nav-color: rgba(255,255,255,0.85);
+}
+
+
+
+/* ===========================
+   Base / layout styles (using variables)
+   =========================== */
 
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
   margin:0;
-  background:linear-gradient(180deg,var(--bg),#ffffff 70%);
+  font-family: var(--font-sans);
+  color:var(--text);
+  background: linear-gradient(180deg, var(--background), var(--page-gradient-end) 70%);
   -webkit-font-smoothing:antialiased;
   -moz-osx-font-smoothing:grayscale;
-  color:var(--accent-2);
   line-height:1.6;
+  transition: background 0.45s ease, color 0.35s ease;
 }
 
 .container{
@@ -32,6 +256,7 @@ body{
 .site-header{
   background:transparent;
   padding:22px 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 .header-inner{
   display:flex;
@@ -40,9 +265,9 @@ body{
 }
 .brand h1{
   margin:0;
-  font-family: "Bonheur Royale";
+  font-family: var(--brand-font);
   font-size:3rem;
-  color:#0f172a;
+  color:var(--heading);
 }
 .brand .tag{
   margin: 2px 0 0;
@@ -51,6 +276,11 @@ body{
 }
 
 /* Nav */
+.main-nav{
+  display:flex;
+  align-items:center;
+  gap:0.5rem;
+}
 .main-nav a{
   text-decoration:none;
   color:var(--muted);
@@ -58,7 +288,7 @@ body{
   font-weight:600;
   font-size:0.95rem;
 }
-.main-nav a:hover{color:var(--accent)}
+.main-nav a:hover{ color: var(--link); transform: translateY(-1px); }
 
 /* Hero */
 .hero{
@@ -73,8 +303,8 @@ body{
 }
 .hero-text h2{
   margin:0 0 10px;
-  font-family:"Lora", serif;
-  color:#072a2a;
+  font-family:var(--font-serif);
+  color:var(--heading);
   font-size:2rem;
 }
 .lead{
@@ -82,21 +312,32 @@ body{
   font-size:1.02rem;
   margin-bottom:14px;
 }
+
+/* Buttons */
 .btn{
   display:inline-block;
-  background:var(--accent);
-  color:#fff;
+  background:var(--btn-bg);
+  color:var(--btn-foreground);
   padding:10px 16px;
   border-radius:10px;
   text-decoration:none;
   font-weight:700;
-  box-shadow:var(--shadow);
+  box-shadow: 0 6px 18px var(--shadow-color);
+  border: 1px solid rgba(0,0,0,0.04);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
 }
+.btn:hover{
+  background:var(--btn-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px var(--shadow-color);
+}
+
+/* Hero image */
 .hero-image img{
   width:100%;
   border-radius:12px;
   display:block;
-  box-shadow:var(--shadow);
+  box-shadow: 0 6px 18px var(--shadow-color);
 }
 
 /* Content */
@@ -107,12 +348,14 @@ body{
   border-radius:var(--radius);
   padding:20px;
   margin-bottom:18px;
-  box-shadow:var(--shadow);
-  color:#0f172a;
+  box-shadow: 0 6px 18px var(--shadow-color);
+  color:var(--text);
+  border: 1px solid var(--card-border);
+  transition: background 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
 }
-.panel h3{margin-top:0;color:#072a2a}
-.panel h4{margin:10px 0 6px;color:#083737}
-.muted{color:var(--muted);margin:6px 0 14px}
+.panel h3{margin-top:0;color:var(--heading)}
+.panel h4{margin:10px 0 6px;color:var(--heading)}
+.muted{color:var(--muted);margin:6px 0 14px;}
 .small{font-size:0.95rem}
 .final ol{margin-left:1.1rem}
 
@@ -126,7 +369,7 @@ body{
   background:transparent;
   padding:26px 0;
   color:var(--muted);
-  border-top:1px solid rgba(15,23,42,0.05);
+  border-top:1px solid rgba(15,23,42,0.03);
   text-align:center;
   margin-top:36px;
 }
@@ -139,9 +382,116 @@ body{
   .main-nav{margin-top:12px}
 }
 
-
+/* bonjour font helper */
 .bonheur-royale-regular {
-  font-family: "Bonheur Royale", cursive;
+  font-family: var(--brand-font);
   font-weight: 400;
   font-style: normal;
+}
+
+/* ===========================
+   Theme UI controls & dropdown
+   =========================== */
+
+/* THEME BUTTON STYLING */
+.theme-btn {
+  margin-left: 24px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 2px solid var(--accent);
+  background: transparent;
+  color: var(--accent);
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.25s ease;
+  letter-spacing: 0.2px;
+}
+.theme-btn:hover {
+  background: var(--accent);
+  color: var(--btn-foreground);
+  box-shadow: 0 8px 26px var(--shadow-color);
+  transform: translateY(-1px);
+}
+
+/* DROPDOWN WRAPPER */
+.theme-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* DROPDOWN MENU */
+.theme-menu {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background: var(--card);
+  border-radius: 12px;
+  box-shadow: 0 10px 32px var(--shadow-color);
+  padding: 8px 0;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-6px);
+  transition: 0.22s ease;
+  z-index: 999;
+}
+
+/* VISIBLE STATE (added via JS) */
+.theme-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* BUTTONS INSIDE DROPDOWN */
+.theme-menu button {
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 10px 18px;
+  text-align: left;
+  font-size: 0.95rem;
+  cursor: pointer;
+  color: var(--text);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+.theme-menu button:hover {
+  background: rgba(0,0,0,0.04);
+}
+
+/* SMOOTH COLOR TRANSITIONS (global) */
+body, .panel, .btn, .site-header, .site-footer, .theme-menu, .theme-btn {
+  transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+
+/* Utility: subtle link style */
+a { color: var(--link); text-decoration: none; }
+a:hover { color: var(--link-hover); text-decoration: underline; }
+
+/* Inputs & small UI (if you add inputs later) */
+input, textarea, select {
+  background: var(--input-bg);
+  color: var(--text);
+  border: 1px solid rgba(0,0,0,0.06);
+  padding: 8px 10px;
+  border-radius: 8px;
+  outline: none;
+  transition: box-shadow 0.15s ease, border-color 0.15s ease;
+}
+input:focus, textarea:focus, select:focus {
+  box-shadow: 0 8px 20px var(--shadow-color);
+  border-color: var(--accent);
+}
+
+/* Small accessibility nicety: high-contrast focus ring */
+:focus { outline: 3px solid rgba(0,0,0,0.06); outline-offset: 2px; }
+
+body {
+  background: linear-gradient(
+    to bottom,
+    var(--background) 100%,
+    var(--background-2) 100%,
+    var(--page-gradient-end) 100%
+  );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
