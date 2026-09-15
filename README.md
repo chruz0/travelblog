@@ -4,7 +4,7 @@
 
 A themeable travel blog exploring a focused research question: how does the treatment and captivity of dolphins at a popular Jamaican attraction affect a visitor's experience, and what should travelers weigh before deciding to participate? Rather than a typical destination write-up, the site combines firsthand field observations with secondary research to give readers a balanced, source-backed picture before they visit.
 
-Originally created as a multimodal research project for a college composition course.
+Originally created as a multimodal research project for a college rhetoric course.
 
 ## Features
 
